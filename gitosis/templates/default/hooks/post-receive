@@ -2,3 +2,12 @@
 set -e
 git-update-server-info
 gitosis-run-hook update-mirrors
+
+pushd ../
+app_dir=${PWD##*/}
+popd
+
+app_name=${app_dir/.git/}
+url="${TSURU_HOST}/apps/${app_name}/clone"
+result=$(curl $url)
+echo $result
