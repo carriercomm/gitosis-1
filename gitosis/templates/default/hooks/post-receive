@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 git-update-server-info
 gitosis-run-hook update-mirrors
