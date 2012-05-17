@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --init-file /etc/profile
 set -e
 git-update-server-info
 gitosis-run-hook update-mirrors
