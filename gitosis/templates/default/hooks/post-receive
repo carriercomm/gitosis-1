@@ -4,5 +4,5 @@ gitosis-run-hook update-mirrors
 app_dir=${PWD##*/}
 app_name=${app_dir/.git/}
 url="${TSURU_HOST}/apps/${app_name}/repository/clone"
-result=$(curl --max-time 1800 $url)
+result=$(curl -s --max-time 1800 $url)
 echo $result
