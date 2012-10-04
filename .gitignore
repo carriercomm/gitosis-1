@@ -15,3 +15,6 @@
 /build
 /dist
 /python-build-stamp-*
+
+#vim swap files
+*.sw[a-z]
