@@ -1,5 +1,15 @@
-#!/bin/bash -el
-app_dir=${PWD##*/}
-app_name=${app_dir/.git/}
-url="${TSURU_HOST}/apps/${app_name}/avaliable"
-curl -s -S -N --fail --max-time 1800 $url
+#!/usr/bin/env python
+
+import urllib2
+
+
+# tsuru_host = os.environ.get("TSURU_HOST", "")
+# app_name = os.getcwd().split("/")[-1].replace(".git", "")
+tsuru_host = "http://ec2-23-22-70-116.compute-1.amazonaws.com:8080"
+app_name = "bla4"
+timeout = 1800
+
+f = urllib2.urlopen("{0}/apps/{1}/avaliable".format(tsuru_host, app_name), timeout=timeout)
+if f.getcode() != 200:
+    print f.read()
+    sys.exit(1)
