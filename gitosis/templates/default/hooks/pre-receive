@@ -2,4 +2,4 @@
 app_dir=${PWD##*/}
 app_name=${app_dir/.git/}
 url="${TSURU_HOST}/apps/${app_name}/avaliable"
-curl -s -N --fail --max-time 1800 $url
+curl -s -S -N --fail --max-time 1800 $url
